@@ -1,0 +1,41 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include "RTClib.h"
+
+RTC_DS3231 rtc;
+
+void setup() {
+    Serial.begin(115200);
+    Wire.begin();
+
+    if (!rtc.begin()) {
+        Serial.println("RTC not found!");
+        while (1);
+    }
+
+    // Uncomment this line ONCE to set the RTC time to your PC compile time
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+
+    Serial.println("RTC initialized.");
+}
+
+void loop() {
+    DateTime now = rtc.now();
+
+    Serial.print(now.year());
+    Serial.print('/');
+    Serial.print(now.month());
+    Serial.print('/');
+    Serial.print(now.day());
+    Serial.print("  ");
+
+    Serial.print(now.hour());
+    Serial.print(':');
+    Serial.print(now.minute());
+    Serial.print(':');
+    Serial.print(now.second());
+
+    Serial.println();
+
+    delay(1000);
+}
