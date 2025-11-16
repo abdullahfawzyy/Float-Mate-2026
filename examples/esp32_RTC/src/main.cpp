@@ -12,10 +12,7 @@ void setup() {
         Serial.println("RTC not found!");
         while (1);
     }
-
-    // Uncomment this line ONCE to set the RTC time to your PC compile time
-    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-
+    
     Serial.println("RTC initialized.");
 }
 
