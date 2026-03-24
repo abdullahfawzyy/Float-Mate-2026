@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "website_test",
+			"path": ".."
+		},
+		{
+			"name": "atalantis_bar30",
+			"path": "../../atalantis_bar30"
+		}
+	],
+	"settings": {}
+}
